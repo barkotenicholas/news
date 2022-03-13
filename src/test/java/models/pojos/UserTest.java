@@ -47,7 +47,7 @@ class UserTest {
     void getDepartment_returnsDepartment_Integer(){
         User testUser = new User("Nicholas","Barkote","softwareDev",23);
 
-        assertEquals(23,testUser.getDepartmentID());
+        assertEquals(23,testUser.getDepartmentid());
     }
 
     @DisplayName("Equals check if two instancesof user are same")

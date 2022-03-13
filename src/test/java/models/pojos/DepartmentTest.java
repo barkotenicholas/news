@@ -29,7 +29,7 @@ class DepartmentTest {
     void getDescription_departmentReturnsName_String(){
 
         Department testDepartment = new Department("Operations","involved in the daily running of the company",20);
-        assertEquals("involved in the daily running of the company",testDepartment.getDesc());
+        assertEquals("involved in the daily running of the company",testDepartment.getDescription());
 
     }
 

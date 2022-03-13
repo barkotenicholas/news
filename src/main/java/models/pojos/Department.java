@@ -6,12 +6,12 @@ public class Department {
 
     private int id;
     private String name;
-    private String desc;
+    private String description;
     private int employeesCount;
 
-    public Department(String name, String desc, int employeesCount) {
+    public Department(String name, String description, int employeesCount) {
         this.name = name;
-        this.desc = desc;
+        this.description = description;
         this.employeesCount = employeesCount;
     }
 
@@ -31,12 +31,12 @@ public class Department {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getEmployeesCount() {
@@ -53,11 +53,11 @@ public class Department {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Department that = (Department) o;
-        return id == that.id && employeesCount == that.employeesCount && Objects.equals(name, that.name) && Objects.equals(desc, that.desc);
+        return id == that.id && employeesCount == that.employeesCount && Objects.equals(name, that.name) && Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, desc, employeesCount);
+        return Objects.hash(id, name, description, employeesCount);
     }
 }
