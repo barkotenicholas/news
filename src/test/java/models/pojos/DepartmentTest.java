@@ -42,5 +42,13 @@ class DepartmentTest {
 
     }
 
+    @DisplayName("check if two instances of department are equal")
+    @Test
+    void equals_checkIfTwoInstancesOfDepartmentAreEqual_True(){
+        Department testDepartmentOne = new Department("Operations","involved in the daily running of the company",20);
+        Department testDepartmentTwo = new Department("Operations","involved in the daily running of the company",20);
+
+        assertEquals(testDepartmentOne, testDepartmentTwo);
+    }
 
 }
