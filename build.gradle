@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
 
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.3'
     implementation 'org.slf4j:slf4j-simple:1.7.36'
     implementation 'org.sql2o:sql2o:1.6.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
