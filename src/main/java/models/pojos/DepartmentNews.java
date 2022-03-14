@@ -4,12 +4,21 @@ import java.util.Objects;
 
 public class DepartmentNews  extends News{
 
-    public static final String DATABASE ="General";
+    public static final String DATABASE ="Department";
     private int departmentId;
-
+    private  String type;
     public DepartmentNews(String content, String author ,int departmentId) {
         super(content, author);
         this.departmentId = departmentId;
+        this.type = DATABASE;
+    }
+
+    public static String getType() {
+        return DATABASE;
+    }
+
+    public void setDbtype(String dbtype) {
+        this.type = dbtype;
     }
 
     public int getDepartmentId() {
