@@ -1,8 +1,9 @@
 package models.pojos;
 
+
 import java.util.Objects;
 
-public class User {
+public class User  {
 
     private int id;
     private String firstname;
@@ -69,4 +70,6 @@ public class User {
     public int hashCode() {
         return Objects.hash(id, firstname, lastname, role, departmentid);
     }
+
+
 }
