@@ -42,6 +42,19 @@ public class App {
 
         });
 
+        get("/user/:id","application/json",(request, response) -> {
+
+            int id = Integer.parseInt(request.params("id"));
+            User user = userImplementation.findById(id);
+
+            if(user == null){
+                return gson.toJson("No user for that id");
+            }
+
+            return gson.toJson(user);
+
+        });
+
         post("/user/new","application/json",(request, response) -> {
             User user = gson.fromJson(request.body(),User.class);
             userImplementation.add(user);
