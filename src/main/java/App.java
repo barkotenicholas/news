@@ -5,6 +5,7 @@ import models.dao.implementations.DepartmentNewsImplementation;
 import models.dao.implementations.GeneralNewsImplementaion;
 import models.dao.implementations.UserImplementation;
 import models.pojos.Department;
+import models.pojos.GeneralNews;
 import models.pojos.User;
 import org.json.JSONObject;
 import org.sql2o.Connection;
@@ -96,6 +97,20 @@ public class App {
             response.status(201);
             return gson.toJson(user);
         });
+
+
+        get("/news","application/json",(request, response) -> gson.toJson(generalNewsImplementaion.findAll()));
+
+        post("/news/new","application/json",(request, response) -> {
+
+            var news = gson.fromJson(request.body(), GeneralNews.class);
+            generalNewsImplementaion.add(news);
+            response.status(201);
+            return gson.toJson(news);
+
+        });
+
+
     }
 
 }
