@@ -3,6 +3,7 @@ import models.dao.implementations.DepartmentImplementation;
 import models.dao.implementations.DepartmentNewsImplementation;
 import models.dao.implementations.GeneralNewsImplementaion;
 import models.dao.implementations.UserImplementation;
+import models.pojos.Department;
 import models.pojos.User;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -35,6 +36,30 @@ public class App {
             models.put("View all users", "/users");
             return gson.toJson(models);
         });
+
+        get("/department","application/json",(request, response) -> gson.toJson(departmentImplementation.findAll()));
+
+        get("/department/:id","application/json",(request, response) ->
+        {
+            int id = Integer.parseInt(request.params("id"));
+            Department department = departmentImplementation.findById(id);
+            if(department == null){
+                return gson.toJson("No Department for that id");
+            }
+
+            return gson.toJson(department);
+
+        });
+
+
+        post("/department/new","application/json",(request, response) -> {
+            Department department = gson.fromJson(request.body(),Department.class);
+            departmentImplementation.add(department);
+            response.status(201);
+
+            return  gson.toJson(department);
+        });
+
 
         get("/users","application/json",(request, response) -> {
 
