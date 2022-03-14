@@ -47,12 +47,11 @@ class GeneralNewsImplementaionTest {
 
     @Test
     void findById() {
+
         GeneralNews generalNews = setUpNews();
         GeneralNews test = new GeneralNews("one by one","Eton");
-
         gen.add(generalNews);
         gen.add(test);
-
         System.out.println("this is "+test.getId());
         GeneralNews found = gen.findById(test.getId());
         assertEquals(found,test);
@@ -61,12 +60,11 @@ class GeneralNewsImplementaionTest {
 
     @Test
     void findAll() {
+
         GeneralNews generalNews = setUpNews();
         GeneralNews test = new GeneralNews("one by one","Eton");
-
         gen.add(generalNews);
         gen.add(test);
-
         assertEquals(2 , gen.findAll().size());
 
     }
