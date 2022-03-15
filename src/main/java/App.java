@@ -5,6 +5,7 @@ import models.dao.implementations.DepartmentNewsImplementation;
 import models.dao.implementations.GeneralNewsImplementaion;
 import models.dao.implementations.UserImplementation;
 import models.pojos.Department;
+import models.pojos.DepartmentNews;
 import models.pojos.GeneralNews;
 import models.pojos.User;
 import org.json.JSONObject;
@@ -107,6 +108,13 @@ public class App {
             generalNewsImplementaion.add(news);
             response.status(201);
             return gson.toJson(news);
+
+        });
+
+        post("/department/:id/news/new","application/json",(request, response) -> {
+            int id = Integer.parseInt(request.params("id"));
+
+            DepartmentNews departmentNews = gson.fromJson(request.body(),DepartmentNews.class);
 
         });
 
