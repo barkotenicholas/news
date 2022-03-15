@@ -66,11 +66,7 @@ public class App {
         });
 
 
-        get("/users","application/json",(request, response) -> {
-
-            return gson.toJson(userImplementation.getAll());
-
-        });
+        get("/users","application/json",(request, response) -> gson.toJson(userImplementation.getAll()));
 
         get("/user/:id","application/json",(request, response) -> {
 
@@ -111,11 +107,7 @@ public class App {
         });
 
 
-        get("/department/news","application/json",(request, response) -> {
-
-            return gson.toJson(departmentNewsImplementation.findAll());
-
-        });
+        get("/department/news","application/json",(request, response) -> gson.toJson(departmentNewsImplementation.findAll()));
 
         post("/department/:id/news/new","application/json",(request, response) -> {
 
@@ -131,7 +123,6 @@ public class App {
         get("/news","application/json",(request, response) -> {
             return gson.toJson(generalNewsImplementaion.findAll());
         });
-
 
         post("/news/new","application/json",(request, response) -> {
 
