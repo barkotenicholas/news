@@ -27,6 +27,6 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-applicationName = "todo"
+applicationName = "news"
 mainClassName = 'App'
 task stage(dependsOn: ['clean', 'installDist'])
