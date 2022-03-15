@@ -45,7 +45,6 @@ public class App {
         DepartmentImplementation departmentImplementation = new DepartmentImplementation(sql2o);
         DepartmentNewsImplementation departmentNewsImplementation = new DepartmentNewsImplementation(sql2o);
 
-        conn = sql2o.open();
 
         get("/",  (request, response) -> {
 
