@@ -47,7 +47,7 @@ public class App {
 
         conn = sql2o.open();
 
-        get("/", "application/json", (request, response) -> {
+        get("/",  (request, response) -> {
 
             Map<String, Object> models = new HashMap<>();
             models.put("Add user", "/users/new");
