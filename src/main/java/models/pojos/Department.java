@@ -1,5 +1,7 @@
 package models.pojos;
 
+import com.google.gson.JsonElement;
+
 import java.util.Objects;
 
 public class Department {
@@ -60,4 +62,6 @@ public class Department {
     public int hashCode() {
         return Objects.hash(id, name, description, employeesCount);
     }
+
+
 }
