@@ -1,9 +1,12 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'org.example'
 version '1.0-SNAPSHOT'
+
+
 
 repositories {
     mavenCentral()
@@ -24,4 +27,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-task stage(dependsOn: ['clean', 'installDist'])
+task install(type: Copy) {
+    dependsOn subprojects*.tasks*.findByName('build').minus(null)
+    doLast {
+        println "exec install task"
+    }
+}
