@@ -6,7 +6,19 @@
 ---
 ![APM](https://img.shields.io/apm/l/vim-mode)
 ---
-
+| route                   | pourpose                                            |
+|-------------------------|-----------------------------------------------------|
+| get("/")                | retuns a list of api routes                         |
+| get("/department")      | Returns a list of all departments                   |
+| get("/department/:id")  | Returns a department with specific                  |
+| post("/department/new") | create a new department                             |
+| get("/users")           | Returns a list of users                             |
+| get("/users/:id")       | Returns a user with the specific id                 |
+| post("/user/new/:id")   | creates a user and associates it with department id |
+| get("/news")            | returns a list of general news created              |
+| post("/news/new")       | creates general news                                |
+| get("/department/news") | returns a list of department news                   |
+| post("/department/:id/news/new") | creates news for a specific department              |
 ---
 
 ## Authors
