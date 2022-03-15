@@ -27,9 +27,6 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-task install(type: Copy) {
-    dependsOn subprojects*.tasks*.findByName('build').minus(null)
-    doLast {
-        println "exec install task"
-    }
-}
+applicationName = "todo"
+mainClassName = 'App'
+task stage(dependsOn: ['clean', 'installDist'])
