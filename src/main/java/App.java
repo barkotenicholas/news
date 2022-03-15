@@ -111,11 +111,30 @@ public class App {
 
         });
 
+
+        get("/department/news","application/json",(request, response) -> {
+
+            return gson.toJson(departmentNewsImplementation.findAll());
+
+        });
+
         post("/department/:id/news/new","application/json",(request, response) -> {
             int id = Integer.parseInt(request.params("id"));
 
             DepartmentNews departmentNews = gson.fromJson(request.body(),DepartmentNews.class);
+            departmentNews.setDepartmentId(id);
+            departmentNewsImplementation.add(departmentNews);
+            response.status(200);
+            return  gson.toJson(departmentNews) ;
+        });
 
+
+        post("/news/new","application/json",(request, response) -> {
+
+            GeneralNews generalNews = gson.fromJson(request.body(),GeneralNews.class);
+            generalNewsImplementaion.add(generalNews);
+
+            return gson.toJson(generalNews);
         });
 
 
