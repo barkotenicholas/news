@@ -1,5 +1,4 @@
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import models.dao.implementations.DepartmentImplementation;
 import models.dao.implementations.DepartmentNewsImplementation;
 import models.dao.implementations.GeneralNewsImplementaion;
@@ -119,13 +118,18 @@ public class App {
         });
 
         post("/department/:id/news/new","application/json",(request, response) -> {
-            int id = Integer.parseInt(request.params("id"));
 
+            int id = Integer.parseInt(request.params("id"));
             DepartmentNews departmentNews = gson.fromJson(request.body(),DepartmentNews.class);
             departmentNews.setDepartmentId(id);
             departmentNewsImplementation.add(departmentNews);
             response.status(200);
             return  gson.toJson(departmentNews) ;
+
+        });
+
+        get("/news","application/json",(request, response) -> {
+            return gson.toJson(generalNewsImplementaion.findAll());
         });
 
 
@@ -133,11 +137,9 @@ public class App {
 
             GeneralNews generalNews = gson.fromJson(request.body(),GeneralNews.class);
             generalNewsImplementaion.add(generalNews);
-
             return gson.toJson(generalNews);
+
         });
-
-
     }
 
 }
