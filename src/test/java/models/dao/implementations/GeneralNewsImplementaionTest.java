@@ -1,15 +1,12 @@
 package models.dao.implementations;
 
 import models.pojos.GeneralNews;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@Disabled
 class GeneralNewsImplementaionTest {
     private static GeneralNewsImplementaion gen;
     private static Connection connection;

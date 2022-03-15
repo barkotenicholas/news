@@ -7,7 +7,7 @@ import org.sql2o.Sql2o;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
+@Disabled
 @DisplayName("User implementation Test")
 class UserImplementationTest {
 

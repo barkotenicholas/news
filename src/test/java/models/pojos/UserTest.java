@@ -1,10 +1,12 @@
 package models.pojos;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 @DisplayName("User class test")
 class UserTest {
 
